@@ -1,0 +1,25 @@
+# SVN
+.svn/
+
+# Linux
+*~
+.directory
+
+# OSX
+.DS_Store
+._*
+
+# Netbeans
+nbproject/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Composer
+vendor/
+composer.lock
+
+# Other
+*.bak
