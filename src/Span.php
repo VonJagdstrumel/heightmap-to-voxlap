@@ -2,6 +2,8 @@
 
 namespace HeightmapToVoxlap;
 
+use UtilLib;
+
 /**
  *
  */
@@ -21,11 +23,11 @@ class Span
     /**
      *
      * @param int $z
-     * @param \HeightmapToVoxlap\Color $spanColor
+     * @param Color $spanColor
      */
     public function __construct($z, Color $spanColor)
     {
-        Util::checkRange($z, self::MIN_Z_VALUE, self::MAX_Z_VALUE);
+        Misc::checkRange($z, self::MIN_Z_VALUE, self::MAX_Z_VALUE);
 
         $this->adjacent = new AdjacentSpanMap();
         $this->z = $z;
@@ -43,7 +45,7 @@ class Span
 
     /**
      *
-     * @return \HeightmapToVoxlap\Color
+     * @return Color
      */
     public function getColor()
     {
@@ -56,14 +58,14 @@ class Span
      */
     public function setZ($z)
     {
-        Util::checkRange($z, self::MIN_Z_VALUE, self::MAX_Z_VALUE);
+        Misc::checkRange($z, self::MIN_Z_VALUE, self::MAX_Z_VALUE);
 
         $this->z = $z;
     }
 
     /**
      *
-     * @param \HeightmapToVoxlap\Color $color
+     * @param Color $color
      */
     public function setColor(Color $color)
     {
@@ -73,7 +75,7 @@ class Span
     /**
      *
      * @param string $direction
-     * @param \HeightmapToVoxlap\Span $span
+     * @param Span $span
      */
     public function setAdjacentSpan($direction, $span)
     {

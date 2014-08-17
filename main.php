@@ -2,12 +2,15 @@
 
 require_once 'vendor/autoload.php';
 
-$total = pow(\HeightmapToVoxlap\Core::VOXLAP_LENGTH, 2);
-$i = new \HeightmapToVoxlap\Core('res/map0.png', 'res/scale.png');
+use HeightmapToVoxlap;
+use UtilLib;
+
+$total = pow(Core::VOXLAP_LENGTH, 2);
+$i = new Core('misc/map0.png', 'misc/scale.png');
 
 foreach ($i->generate() as $spanCoord => $spanData) {
     print $spanData;
 
     $coord = explode(':', $spanCoord);
-    \HeightmapToVoxlap\Util::printProgress(($coord[1] + 1) * \HeightmapToVoxlap\Core::VOXLAP_LENGTH, $total, STDERR);
+    Misc::printProgress(($coord[1] + 1) * Core::VOXLAP_LENGTH, $total, STDERR);
 }

@@ -10,7 +10,7 @@
 ._*
 
 # Netbeans
-nbproject/
+nbproject/private/
 
 # Windows
 Thumbs.db

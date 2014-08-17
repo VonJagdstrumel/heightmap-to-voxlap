@@ -12,7 +12,8 @@
         }
     ],
     "require": {
-        "php": ">=5.4"
+        "php": ">=5.4",
+        "vonjagdstrumel/util-lib": "dev-master"
     },
     "require-dev": {},
     "autoload": {

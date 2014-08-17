@@ -25,7 +25,7 @@ class AdjacentSpanMap
 
     /**
      *
-     * @return \HeightmapToVoxlap\Span
+     * @return Span
      */
     public function getWestSpan()
     {
@@ -34,7 +34,7 @@ class AdjacentSpanMap
 
     /**
      *
-     * @return \HeightmapToVoxlap\Span
+     * @return Span
      */
     public function getEastSpan()
     {
@@ -43,7 +43,7 @@ class AdjacentSpanMap
 
     /**
      *
-     * @return \HeightmapToVoxlap\Span
+     * @return Span
      */
     public function getNorthSpan()
     {
@@ -52,7 +52,7 @@ class AdjacentSpanMap
 
     /**
      *
-     * @return \HeightmapToVoxlap\Span
+     * @return Span
      */
     public function getSouthSpan()
     {
@@ -62,7 +62,7 @@ class AdjacentSpanMap
     /**
      *
      * @param string $direction
-     * @return \HeightmapToVoxlap\Span
+     * @return Span
      */
     public function getSpanByDirection($direction)
     {
@@ -71,7 +71,7 @@ class AdjacentSpanMap
 
     /**
      *
-     * @param \HeightmapToVoxlap\Span $span
+     * @param Span $span
      */
     public function setWestSpan(Span $span)
     {
@@ -80,7 +80,7 @@ class AdjacentSpanMap
 
     /**
      *
-     * @param \HeightmapToVoxlap\Span $span
+     * @param Span $span
      */
     public function setEastSpan(Span $span)
     {
@@ -89,7 +89,7 @@ class AdjacentSpanMap
 
     /**
      *
-     * @param \HeightmapToVoxlap\Span $span
+     * @param Span $span
      */
     public function setNorthSpan(Span $span)
     {
@@ -98,7 +98,7 @@ class AdjacentSpanMap
 
     /**
      *
-     * @param \HeightmapToVoxlap\Span $span
+     * @param Span $span
      */
     public function setSouthSpan(Span $span)
     {
@@ -108,7 +108,7 @@ class AdjacentSpanMap
     /**
      *
      * @param string $direction
-     * @param \HeightmapToVoxlap\Span $span
+     * @param Span $span
      */
     public function setSpanByDirection($direction, Span $span)
     {

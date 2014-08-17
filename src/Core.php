@@ -2,6 +2,8 @@
 
 namespace HeightmapToVoxlap;
 
+use UtilLib;
+
 /**
  *
  */
@@ -33,10 +35,10 @@ class Core
             for ($x = 0; $x < self::VOXLAP_LENGTH; ++$x) {
                 $span = ($x == 0 && $y == 0) ? $this->getSpan($x, $y, 4) : $this->getSpan($x, $y, 3);
 
-                $span->setAdjacentSpan('west', $this->getSpan(Util::modulo($x - 1, self::VOXLAP_LENGTH), $y, 4));
-                $span->setAdjacentSpan('east', $this->getSpan(Util::modulo($x + 1, self::VOXLAP_LENGTH), $y, 4));
-                $span->setAdjacentSpan('north', $this->getSpan($x, Util::modulo($y - 1, self::VOXLAP_LENGTH), 4));
-                $span->setAdjacentSpan('south', $this->getSpan($x, Util::modulo($y + 1, self::VOXLAP_LENGTH), 4));
+                $span->setAdjacentSpan('west', $this->getSpan(Misc::modulo($x - 1, self::VOXLAP_LENGTH), $y, 4));
+                $span->setAdjacentSpan('east', $this->getSpan(Misc::modulo($x + 1, self::VOXLAP_LENGTH), $y, 4));
+                $span->setAdjacentSpan('north', $this->getSpan($x, Misc::modulo($y - 1, self::VOXLAP_LENGTH), 4));
+                $span->setAdjacentSpan('south', $this->getSpan($x, Misc::modulo($y + 1, self::VOXLAP_LENGTH), 4));
 
                 yield "$x:$y" => $span->toBinary();
             }
@@ -49,7 +51,7 @@ class Core
      * @param int $x
      * @param int $y
      * @param int $count
-     * @return \HeightmapToVoxlap\Span
+     * @return Span
      */
     public function getSpan($x, $y, $count)
     {
@@ -85,7 +87,7 @@ class Core
      *
      * @param int $x
      * @param int $y
-     * @return \HeightmapToVoxlap\Color
+     * @return Color
      */
     protected function getColor($x, $y)
     {
